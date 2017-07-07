@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <div>
+      <!--<a v-link="{ path: '/'}">Home</a>-->
+      <a class="list-group-item" v-link="{ path: '/login'}">About</a>
+    </div>
     <router-view></router-view>
   </div>
 </template>
@@ -20,4 +23,5 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+@import '../node_modules/element-ui/lib/theme-default/index.css';
 </style>
