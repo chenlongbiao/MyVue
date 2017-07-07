@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import Login from './login'
+  import Login from './loginView/login'
 export default {
     components: {Login},
     name: 'hello',

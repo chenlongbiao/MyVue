@@ -2,7 +2,7 @@
   <div id="app">
     <div>
       <!--<a v-link="{ path: '/'}">Home</a>-->
-      <a class="list-group-item" v-link="{ path: '/login'}">About</a>
+      <!--<a class="list-group-item" v-link="{ pathlogin_viewogin'}">About</a>-->
     </div>
     <router-view></router-view>
   </div>
@@ -23,5 +23,4 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-@import '../node_modules/element-ui/lib/theme-default/index.css';
 </style>
