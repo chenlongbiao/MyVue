@@ -2,7 +2,7 @@
   <div id="signIn">
     <el-input v-model="input1" placeholder="请输入用户名">
     </el-input>
-    <el-input v-bind:type="inType" icon="search"
+    <el-input v-bind:type="inType" icon="more"
               v-model="input2"
               :on-icon-click="handleIconClick"
               placeholder="请输入密码">
