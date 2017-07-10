@@ -36,9 +36,9 @@
             name: 'wise',
             info: 'wrong'
           }
-        }).then(response=>{
+        }).then(response => {
 
-        }, response=>{
+        }, response => {
 
         })
         console.log(this.phoneNum)
