@@ -1,10 +1,10 @@
 <template>
   <div id="signUp" class="signIn_class">
-    <el-input v-model="input1" placeholder="请输入姓名">
+    <el-input v-model="input1" placeholder="请输入昵称">
     </el-input>
     <el-input v-model="input1" placeholder="请输入手机号">
     </el-input>
-    <el-input ref="passInput" v-bind:type="red"  icon="search"
+    <el-input ref="passInput" v-bind:type="instyles"  icon="more"
               v-model="input2"
               :on-icon-click="handleIconClick"
               placeholder="请输入密码">
@@ -21,16 +21,16 @@
       return {
         input2: '',
         input1: '',
-        red: 'password'
+        instyles: 'password'
       }
     },
     methods: {
       handleIconClick (ev) {
         console.log(this.$refs.passInput.type)
-        if (this.red !== '') {
-          this.red = ''
+        if (this.instyles !== '') {
+          this.instyles = ''
         } else {
-          this.red = 'password'
+          this.instyles = 'password'
         }
       }
     }
