@@ -9,7 +9,13 @@
     <el-input v-model="checkmess" placeholder="请输入验证码" icon="message"
               :on-icon-click="handleIconClick">
     </el-input>
-    <el-button type="primary" size="large" v-on:click="login">登录</el-button>
+    <span class="checkBoxClass">
+      <el-checkbox v-model="checked">记住密码</el-checkbox>
+    </span>
+    <span class="checkbtt">
+      <el-button type="text">忘记密码</el-button>
+    </span>
+    <el-button class="loginbtt" type="primary" size="large" v-on:click="login">登录</el-button>
   </div>
 </template>
 
@@ -21,7 +27,8 @@
         checkmess: '',
         passWord: '',
         phoneNum: '',
-        inType: 'password'
+        inType: 'password',
+        checked: false
       }
     },
     methods: {
@@ -50,15 +57,28 @@
 </script>
 <style>
 
-  #signIn button {
+  .loginbtt {
+    margin-top: 10px;
+    margin-bottom: 50px;
     width: 100%;
   }
 
   #signIn input {
+    margin-bottom: 10px;
+    /*width: 80%;*/
     background-color: hsla(0, 0%, 71%, .1);
   }
 
   .signIn_class {
     margin-top: 20px;
+  }
+
+  .checkBoxClass {
+    margin-top: 5px;
+    float: left;
+  }
+
+  .checkbtt {
+    float: right;
   }
 </style>

@@ -75,8 +75,8 @@
   }
 
   .login_cen {
-    margin: 20%;
-    width: 60%;
+    margin: 14%;
+    /*width: 70%;*/
   }
 
   b {

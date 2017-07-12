@@ -1,15 +1,23 @@
 <template>
-  <div id="signUp" class="signIn_class">
-    <el-input v-model="input1" placeholder="请输入昵称">
+  <div id="signUp" class="signUp_class">
+    <el-input v-model="username" placeholder="请输入昵称">
     </el-input>
-    <el-input v-model="input1" placeholder="请输入手机号">
+    <el-input v-model="mobile" placeholder="请输入手机号">
     </el-input>
-    <el-input ref="passInput" v-bind:type="instyles"  icon="more"
-              v-model="input2"
+    <el-input ref="passInput" v-bind:type="instyles" icon="more"
+              v-model="password"
               :on-icon-click="handleIconClick"
               placeholder="请输入密码">
     </el-input>
-    <el-button type="success" size="large">注册</el-button>
+    <span class="checkBoxClass">
+      <el-checkbox v-model="checked" v-on:change=acceptagreement()>同意用户协议</el-checkbox>
+      <!--<el-radio class="radio" v-model="radio" label=true></el-radio>-->
+    </span>
+    <span class="checkbtt">
+      <el-button type="text">用户协议</el-button>
+    </span>
+    <el-button class="loginbtt" type="success" v-bind:disabled="disables" size="large" v-on:click=signUp()>注册
+    </el-button>
   </div>
 </template>
 
@@ -19,9 +27,12 @@
 //    props: {inpType: 'password'},
     data () {
       return {
-        input2: '',
-        input1: '',
-        instyles: 'password'
+        username: '',
+        mobile: '',
+        password: '',
+        instyles: 'password',
+        checked: false,
+        disables: true
       }
     },
     methods: {
@@ -32,17 +43,57 @@
         } else {
           this.instyles = 'password'
         }
+      },
+      acceptagreement (ev) {
+        if (this.checked) {
+          console.log(this.checked)
+          this.disables = false
+        } else {
+          console.log(this.checked)
+          this.disables = true
+        }
+      },
+      signUp () {
+        this.$http.post('http://localhost:8080/signUp',
+          {
+            username: this.username,
+            password: this.password,
+            mobile: this.mobile
+          }).then(response => {
+            console.log(response)
+          }, response => {
+            console.log(response)
+          })
       }
     }
   }
 </script>
 <style>
 
-  #signUp button {
+
+  .loginbtt {
+    margin-top: 10px;
+    margin-bottom: 50px;
     width: 100%;
   }
 
   #signUp input {
+    margin-bottom: 10px;
+    /*width: 80%;*/
     background-color: hsla(0, 0%, 71%, .1);
   }
+
+  .signUp_class {
+    margin-top: 20px;
+  }
+
+  .checkBoxClass {
+    margin-top: 5px;
+    float: left;
+  }
+
+  .checkbtt {
+    float: right;
+  }
+
 </style>
