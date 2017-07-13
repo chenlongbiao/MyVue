@@ -54,16 +54,14 @@
         }
       },
       signUp () {
-        this.$http.post('http://localhost:8080/signUp',
-          {
-            username: this.username,
-            password: this.password,
-            mobile: this.mobile
-          }).then(response => {
-            console.log(response)
-          }, response => {
-            console.log(response)
-          })
+        let data = {
+          username: this.username,
+          mobile: this.mobile,
+          password: this.password
+        }
+        this.$store.dispatch('signup', data).then(
+          console.log(1111111111)
+        )
       }
     }
   }
