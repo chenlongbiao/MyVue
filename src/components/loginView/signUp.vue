@@ -60,7 +60,7 @@
           password: this.password
         }
         this.$store.dispatch('signup', data).then(
-          console.log(1111111111)
+          console.log(this.$store.state)
         )
       }
     }
