@@ -60,7 +60,10 @@
           password: this.password
         }
         this.$store.dispatch('signup', data).then(
-          console.log(this.$store.state)
+          res => {
+            console.log(this.$store.state.logins.signUpstate)
+            console.log(123123123123123123123213)
+          }
         )
       }
     }
@@ -70,8 +73,8 @@
 
 
   .loginbtt {
-    margin-top: 10px;
-    margin-bottom: 50px;
+    margin-top: 60px;
+    /*margin-bottom: px;*/
     width: 100%;
   }
 
@@ -86,11 +89,12 @@
   }
 
   .checkBoxClass {
-    margin-top: 5px;
+    margin-top: 15px;
     float: left;
   }
 
   .checkbtt {
+    margin-top: 10px;
     float: right;
   }
 

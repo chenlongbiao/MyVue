@@ -8,6 +8,7 @@ import signUp from '@/components/loginView/signUp'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/hello',
